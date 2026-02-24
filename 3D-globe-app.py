@@ -13,8 +13,8 @@ import pydeck as pdk
 # ----------------------------
 # Streamlit setup (must be first)
 # ----------------------------
-st.set_page_config(page_title="Multi-layer Map Viewer", layout="wide")
-st.title("🗺️ Multi-layer Map Viewer (auto-load from ./files)")
+st.set_page_config(page_title="ERP Map Viewer", layout="wide")
+st.title("🗺️ ERP Map Viewer")
 
 
 # ----------------------------
@@ -42,8 +42,8 @@ STYLE_OPTIONS = {
     "Voyager (Carto Streets)": "https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json",
 
     # ---- OPTIONAL: MAPBOX (ONLY WORKS IF TOKEN VALID) ----
-    "Mapbox Streets": "mapbox://styles/mapbox/streets-v12",
-    "Mapbox Satellite + Labels": "mapbox://styles/mapbox/satellite-streets-v12",
+    # "Mapbox Streets": "mapbox://styles/mapbox/streets-v12",
+    # "Mapbox Satellite + Labels": "mapbox://styles/mapbox/satellite-streets-v12",
 }
 
 
@@ -164,8 +164,7 @@ for lname in enabled_names:
     chosen_hex = st.sidebar.color_picker(lname, value=to_hex(default_rgb), key=f"color_{lname}")
     layer_rgb[lname] = hex_to_rgb(chosen_hex)
 
-# IMPORTANT: default OFF on Cloud (GlobeView can blank the map)
-use_globe = st.sidebar.checkbox("Try Globe view (may not work on Cloud)", value=False)
+
 
 
 # ----------------------------
