@@ -36,11 +36,14 @@ else:
 
 
 STYLE_OPTIONS = {
-    "Satellite + Labels": "mapbox://styles/mapbox/satellite-streets-v12",
-    "Light": "mapbox://styles/mapbox/light-v11",
-    "Dark": "mapbox://styles/mapbox/dark-v11",
-    "Outdoors": "mapbox://styles/mapbox/outdoors-v12",
-    "Streets": "mapbox://styles/mapbox/streets-v12",
+    # ---- CARTO (NO TOKEN REQUIRED) ----
+    "Light (Carto Positron)": "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
+    "Dark (Carto Dark Matter)": "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
+    "Voyager (Carto Streets)": "https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json",
+
+    # ---- OPTIONAL: MAPBOX (ONLY WORKS IF TOKEN VALID) ----
+    "Mapbox Streets": "mapbox://styles/mapbox/streets-v12",
+    "Mapbox Satellite + Labels": "mapbox://styles/mapbox/satellite-streets-v12",
 }
 
 
