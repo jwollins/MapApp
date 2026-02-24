@@ -50,12 +50,20 @@ STYLE_OPTIONS = {
 # ----------------------------
 # Helpers
 # ----------------------------
+BRIGHT_PALETTE = [
+    [255, 80, 80],    # red
+    [255, 170, 0],    # orange
+    [255, 230, 0],    # yellow
+    [0, 200, 120],    # green
+    [0, 180, 255],    # blue
+    [170, 80, 255],   # purple
+    [255, 0, 200],    # magenta
+]
+
 def layer_color(name: str, alpha: int = 120) -> list[int]:
-    h = hashlib.md5(name.encode("utf-8")).hexdigest()
-    r = 40 + (int(h[0:2], 16) % 171)
-    g = 40 + (int(h[2:4], 16) % 171)
-    b = 40 + (int(h[4:6], 16) % 171)
-    return [r, g, b, alpha]
+    idx = int(hashlib.md5(name.encode()).hexdigest(), 16) % len(BRIGHT_PALETTE)
+    rgb = BRIGHT_PALETTE[idx]
+    return [rgb[0], rgb[1], rgb[2], alpha]
 
 
 def to_hex(rgb: list[int]) -> str:
