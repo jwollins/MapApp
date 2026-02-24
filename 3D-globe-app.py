@@ -337,3 +337,9 @@ with tab_map:
     )
 
     st.pydeck_chart(deck, use_container_width=True)
+
+st.write("bounds:", bounds)
+st.write("center:", center_lat, center_lon, "zoom:", zoom)
+
+import pydeck
+st.write("pydeck version:", pydeck.__version__)
