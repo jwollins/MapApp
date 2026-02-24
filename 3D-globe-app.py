@@ -165,7 +165,7 @@ for lname in enabled_names:
     layer_rgb[lname] = hex_to_rgb(chosen_hex)
 
 # IMPORTANT: default OFF on Cloud (GlobeView can blank the map)
-# use_globe = st.sidebar.checkbox("Try Globe view (may not work on Cloud)", value=False)
+use_globe = st.sidebar.checkbox("Try Globe view (may not work on Cloud)", value=False)
 
 
 # ----------------------------
@@ -291,8 +291,8 @@ for lname in enabled_names:
 # ----------------------------
 # Render
 # ----------------------------
-# with tab_map:
-#     views = [pdk.View(type="GlobeView")] if use_globe else [pdk.View(type="MapView")]
+with tab_map:
+    views = [pdk.View(type="GlobeView")] if use_globe else [pdk.View(type="MapView")]
 
     deck = pdk.Deck(
         layers=deck_layers,
