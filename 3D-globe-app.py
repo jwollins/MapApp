@@ -216,7 +216,7 @@ combined = gpd.GeoDataFrame(pd.concat(enabled_gdfs, ignore_index=True), crs="EPS
 bounds = combined.total_bounds
 center_lon = float((bounds[0] + bounds[2]) / 2.0)
 center_lat = float((bounds[1] + bounds[3]) / 2.0)
-zoom = zoom_from_bounds(bounds)
+zoom = 1.5
 
 # Helpful debug
 st.caption(f"Center: {center_lat:.6f}, {center_lon:.6f} | Zoom: {zoom:.2f}")
