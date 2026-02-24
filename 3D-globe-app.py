@@ -305,7 +305,7 @@ with tab_map:
         ),
         tooltip=tooltip,
         map_provider="mapbox",
-        map_style="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
+        map_style=map_style,
         views=views,
     )
 
