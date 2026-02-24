@@ -8,6 +8,11 @@ import streamlit as st
 import geopandas as gpd
 import pydeck as pdk
 
+# try to add the token
+token = st.secrets["MAPBOX_ACCESS_TOKEN"]
+
+st.write("Token loaded:", "MAPBOX_API_KEY" in st.secrets)
+
 # --------------------------------------------------
 # Helpers
 # --------------------------------------------------
