@@ -12,6 +12,7 @@ import pydeck as pdk
 token = st.secrets["MAPBOX_ACCESS_TOKEN"]
 
 st.write("Token loaded:", "MAPBOX_ACCESS_TOKEN" in st.secrets)
+pdk.settings.mapbox_api_key = st.secrets.get("MAPBOX_API_KEY") or st.secrets.get("MAPBOX_ACCESS_TOKEN")
 
 # --------------------------------------------------
 # Helpers
